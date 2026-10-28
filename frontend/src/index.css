@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+  }
+
+  body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Custom scrollbars for clean modern mobile look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.8);
+  }
+}
+
+.glow-active {
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+.map-tiles-night {
+  filter: brightness(0.7) invert(1) contrast(2.2) hue-rotate(200deg) saturate(0.25) !important;
+}
+
+/* Google Maps-style natural hand grab cursor */
+.leaflet-container,
+.leaflet-grab,
+.google-map-cursor {
+  cursor: grab !important;
+  cursor: -webkit-grab !important;
+}
+
+.leaflet-container:active,
+.leaflet-dragging,
+.leaflet-dragging .leaflet-grab,
+.google-map-cursor:active {
+  cursor: grabbing !important;
+  cursor: -webkit-grabbing !important;
+}

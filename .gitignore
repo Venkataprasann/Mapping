@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Production build artifacts
+dist/
+*/dist/
+build/
+
+# Local Environment Variables & Secrets
+.env
+*.env
+!.env.example
+*.local
+
+# System & Editor logs
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Antigravity & IDE
+.vscode/
+.idea/
+.gemini/
